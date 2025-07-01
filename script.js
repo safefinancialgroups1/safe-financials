@@ -1,5 +1,5 @@
 const auth = firebase.auth();
-const adminEmail = "admin@example.com"; // Change this to your admin email
+const adminEmail = "safe493069@gmail.com"; // Change this to your admin email
 
 function login() {
   const email = document.getElementById('email').value;
