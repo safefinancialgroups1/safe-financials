@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Dashboard</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script defer src="dashboard.js"></script>
+</head>
+<body>
+  <h2>Welcome to Your Dashboard</h2>
+
+  <h3>Add or Update Customer</h3>
+  <input type="hidden" id="anushshinu025@gmail.com">
+  <input type="text" id="custName" placeholder="ANUSH S"><br>
+  <input type="text" id="custPhone" placeholder="8089863069"><br>
+  <input type="number" id="custBalance" placeholder="25000"><br>
+  <button onclick="submitCustomer()">Save Customer</button>
+
+  <h3>Your Customers</h3>
+  <div id="customerList"></div>
+</body>
+</html>
