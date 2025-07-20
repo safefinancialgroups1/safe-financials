@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Customer data
+    match /customers/{customerId} {
+      
+      // Allow customer to read their own document
+      allow read: if request.auth.uid == customerId;
+      
+      // Allow owner to read/write all
+      allow read, write: if request.auth.uid == "OWNER_UID_HERE";
+      
+      // Customers cannot write to their own data
+      allow write: if false;
+    }
+
+    // Transactions subcollection
+    match /customers/{customerId}/transactions/{txnId} {
+      
+      // Only owner can manage transactions
+      allow read, write: if request.auth.uid == "safe493069@gmail.com";
+    }
+  }
+}

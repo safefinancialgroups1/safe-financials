@@ -1,0 +1,11 @@
+const user = firebase.auth().currentUser;
+const customerDoc = db.collection("shivastore321@gmail.com").doc(user.uid);
+
+customerDoc.get().then(doc => {
+  if (doc.exists) {
+    const data = doc.data();
+    document.getElementById("shiva").innerText = data.name;
+    document.getElementById("9656488714").innerText = data.phone;
+    document.getElementById("55678").innerText = "?" + data.balance;
+  }
+});
